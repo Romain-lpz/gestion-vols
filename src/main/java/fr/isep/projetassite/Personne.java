@@ -8,8 +8,8 @@ public class Personne {
   private String adresse;
   private String contact;
 
-  public Personne(String Nom, String adresse, String contact) {
-    this.nom = Nom;
+  public Personne(String nom, String adresse, String contact) {
+    this.nom = nom;
     this.adresse = adresse;
     this.identifiant = UUID.randomUUID();
     this.Contact = contact;
