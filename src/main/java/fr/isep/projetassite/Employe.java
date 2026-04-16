@@ -17,4 +17,6 @@ public class Employe extends Personne {
   public String obtenirInfos() {
     return super.obtenirInfos() + "\nNuméro Employé: " + this.numeroEmploye + " Date d'embauche: " + this.dateEmbauche;
   }
+
+  public abstract String obtenirRole();
 }
