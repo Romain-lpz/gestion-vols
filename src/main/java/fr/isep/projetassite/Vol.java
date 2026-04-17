@@ -15,6 +15,7 @@ public class Vol {
   private List<Passager> listePassagers;
   private Pilote pilote;
   private List<PersonnelCabine> equipeCabine;
+  private static List<Vol> tousLesVols = new ArrayList<>();
 
   public Vol(String numeroVol, String origine, String destination, LocalDateTime depart, LocalDateTime arrivee) {
     this.numeroVol = numeroVol;
@@ -38,5 +39,33 @@ public class Vol {
 
   public String getNumeroVol() {
     return this.numeroVol;
+  }
+
+  public static void ajouterVol(Vol v) {
+    tousLesVols.add(v);
+  }
+
+  // les CRUD
+  public static Vol chercherVol(String numeroVol) {
+    for (Vol v : tousLesVols) {
+      if (v.getNumeroVol().equals(numeroVol)) {
+        return v;
+      }
+    }
+    return null;
+  }
+
+  public static void modifierVol(String numeroVol, String nouvelleDestination) {
+    Vol v = chercherVol(numeroVol);
+    if (v != null) {
+      v.destination = nouvelleDestination;
+    }
+  }
+
+  public static void supprimerVol(String numeroVol) {
+    Vol v = chercherVol(numeroVol);
+    if (v != null) {
+      tousLesVols.remove(v);
+    }
   }
 }
