@@ -12,7 +12,7 @@ public class Personne {
     this.nom = nom;
     this.adresse = adresse;
     this.identifiant = UUID.randomUUID();
-    this.Contact = contact;
+    this.contact = contact;
   }
 
   public String getName() {

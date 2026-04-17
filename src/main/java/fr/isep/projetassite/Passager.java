@@ -1,7 +1,7 @@
 package fr.isep.projetassite;
 
 import java.util.ArrayList;
-import java.util.List
+import java.util.List;
 
 public class Passager extends Personne {
   private String passeport;
