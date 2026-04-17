@@ -1,0 +1,20 @@
+# Fichiers compilés
+*.class
+*.log
+*.jar
+*.war
+
+# Dossier de build Maven (TRÈS IMPORTANT POUR VOUS)
+target/
+
+# Dossiers de l'éditeur de code (IDE)
+.vscode/
+.idea/
+*.iml
+.project
+.classpath
+.settings/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
