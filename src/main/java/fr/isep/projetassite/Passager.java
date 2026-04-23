@@ -17,6 +17,9 @@ public class Passager extends Personne {
   }
 
   public void reserverVol() {
+    Reservation nouvelleResa = new Reservation(idResa, this);
+    nouvelleResa.ajouterVol(v);
+    Reservation.ajouter(nouvelleResa);
     System.out.println("reserver vol");
   }
 

@@ -20,4 +20,63 @@ public class Reservation {
     this.volsReserves = new ArrayList<>();
   }
 
+  public static void ajouter(Reservation r) {
+    toutesLesReservations.add(r);
+  }
+
+  public static Reservation obtenirReservations(String id) {
+    for (Reservation r : toutesLesReservations) {
+      if (r.getNumeroReservation().equals(id)) {
+        return r;
+      }
+    }
+    return null;
+  }
+
+  public static void modifierStatut(String id, String nouveauStatut) {
+    Reservation r = obtenirReservations(id);
+    if (r != null) {
+      r.statut = nouveauStatut;
+    }
+  }
+
+  public static void annulerReservationID(String id) {
+    Reservation r = obtenirReservations(id);
+    if (r != null) {
+      toutesLesReservations.remove(r);
+    }
+  }
+
+  public void confirmerReservation() {
+    this.statut = "Confirmée";
+  }
+
+  public void annulerReservation() {
+    this.statut = "Annulée";
+  }
+
+  public void modifierReservation(LocalDateTime nouvelleDate) {
+    this.dateReservation = nouvelleDate;
+  }
+
+  public void ajouterVol(Vol v) {
+    this.volsReserves.add(v);
+  }
+
+  public String obtenirInfos() {
+    StringBuilder sb = new StringBuilder();
+    sb.append("Réservation N°: ").append(numeroReservation)
+        .append(" | Statut: ").append(statut)
+        .append("\nPassager: ").append(passager.getName())
+        .append("\nVols inclus: ");
+    for (Vol v : volsReserves) {
+      sb.append(v.getNumeroVol()).append(" ");
+    }
+    return sb.toString();
+  }
+
+  public String getNumeroReservation() {
+    return numeroReservation;
+  }
+
 }
